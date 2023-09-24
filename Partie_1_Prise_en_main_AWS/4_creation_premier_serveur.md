@@ -19,3 +19,23 @@ On peut créer une copie de notre disque dur à tout moment, si besoin. On appel
 Lightsail permet ainsi de créer un serveur web en quelques clics, mais n'es pas très customisable si on a besoin d'apporter des modifications précises dessus (ce qui peut vite arriver en entreprise).
 
 Pour créer un serveur web un peu plus personnalisable, on va utiliser **Elastic Beanstalk**.
+
+Le service est toujours trouvables dans la partie Services > Calcul de la console AWS.
+
+Après faut juste suivre ce qu'il y a en vidéo (après un clic sur le CTA "Créer une application" de mon côté).
+
+Oui, on peut créer un sous-domaine comme ça avec ce service gratos (pour le moment) !
+
+À partir de ce moment-là, on peut directement charger un code tout prêt !
+
+Mais ici dans ce cours, on n'en a pas. On va juste se servir de ce serveur pour exécuter un script PHP de test.
+
+Après j'ai laissé tous les autres paramètres par défaut.
+
+Et au bout de quelques minutes, l'instance devrait avoir été créée.
+
+Enfin en fait j'ai du suivre le tuto [sur ce lien](https://docs.aws.amazon.com/fr_fr/elasticbeanstalk/latest/dg/using-features.environments.html), car une manip à suivre en plus doit être suivie avant de créer une appication Elastic Beanstalk.
+
+Une fois l'environnement créé, je peux y accéder sur le lien <http://monapplicationtlv-env.eba-mm3gaabm.eu-west-3.elasticbeanstalk.com/>.
+
+Certaines interfaces ne sont plus homogènes avec celles présentées par Openclassrooms. Y a pas mal d'informations sur diverses pages, à creuser à la manière d'un New Relic, mais ce sera pour plus tard si besoin.
