@@ -34,7 +34,7 @@ Après j'ai laissé tous les autres paramètres par défaut.
 
 Et au bout de quelques minutes, l'instance devrait avoir été créée.
 
-Enfin en fait j'ai du suivre le tuto [sur ce lien](https://docs.aws.amazon.com/fr_fr/elasticbeanstalk/latest/dg/using-features.environments.html), car une manip à suivre en plus doit être suivie avant de créer une appication Elastic Beanstalk.
+Enfin en fait j'ai du suivre le tuto [sur ce lien](https://docs.aws.amazon.com/fr_fr/elasticbeanstalk/latest/dg/using-features.environments.html), car une manip à suivre en plus doit être suivie avant de créer une appication Elastic Beanstalk. Si une instance EC2 a été créée, penser à la supprimer ensuite. Ça évite de devoir la payer.
 
 Une fois l'environnement créé, je peux y accéder sur le lien <http://monapplicationtlv-env.eba-mm3gaabm.eu-west-3.elasticbeanstalk.com/>.
 
