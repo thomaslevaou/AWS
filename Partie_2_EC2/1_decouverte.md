@@ -17,7 +17,7 @@ Dans `Réseau et Sécurité > adresses IP élastiques`, on va pouvoir attribuer 
 
 Dans `paire de clés`, on va pouvoir gérer les clés SSH pour accéder aux serveurs, comme avec GitLab.
 
-Dans `Équilibrage de charge`, on va pouvoir gérer l'Elastic Load Balancer, pour que le trafic soit partagé entre plusiseurs serveurs, et dirigé vers le serveur le moins occupé.
+Dans `Équilibrage de charge`, on va pouvoir gérer l'Elastic Load Balancer, pour que le trafic soit partagé entre plusieurs serveurs, et dirigé vers le serveur le moins occupé.
 
 Dans `Auto Scaling`, on va pouvoir ajouter un serveur pour gérer le trafic, seulement pendant les périodes de forte charge.
 
