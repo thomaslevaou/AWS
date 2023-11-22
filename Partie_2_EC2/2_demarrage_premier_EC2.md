@@ -9,4 +9,5 @@ En plus des types de serveurs, il existe aussi plusieurs types de _tarification_
 
 Le lancement d'une instance s'effectue sur la page `Instances > Instances`, en cliquant sur le bouton "Lancer des instances".
 
-Lors du lancement d'une instance, on doit choisir une AMI
+Lors du lancement d'une instance, on doit choisir une AMI (Amazon Machine Image), qui est globalement une grosse configuration logicielle qu'on veut de notre serveur (OS, applications, etc).
+
