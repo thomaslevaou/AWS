@@ -15,3 +15,5 @@ ssh -i "cle_aws.pem" bitnami@ec2-35-181-151-129.eu-west-3.compute.amazonaws.com 
 Notons que lors de la connexion SSH, l'option `-i` est utilisée ici pour `identify_file`, c'est-à-dire dans le fait d'utiliser un fichier contenant la clé privée de l'utilisateur, pour son authentification.
 
 Et nous voilà connecté en SSH sur le serveur Debian 11 (on peut récupérer le numéro de version en faisant un `cat /etc/os-release`).
+
+Au fait, les gens sur Windows ont besoin de passer par PuTTY (ou MobaXTerm) pour se connecter en SSH à un serveur Linux. Ceci est du au fait que Windows ne propose pas de support natif pour les connexions en SSH (qui pour rappel, veut dire Secure SHell). Pour avoir ce support sur Windows, il est nécessaire d'installer un **client SSH** dessus, et c'est ce que font Putty et MobaXterm, par exemple. Notons au fait qu'il existe maintenant WSL pour émuler un environnement Linux sur Windows, et j'en aurai probablement besoin à la Sacem.
