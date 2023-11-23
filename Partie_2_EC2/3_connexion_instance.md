@@ -20,11 +20,24 @@ Au fait, les gens sur Windows ont besoin de passer par PuTTY (ou MobaXTerm) pour
 
 On peut aussi louer une instance EC2 Windows sur AWS (AMI "Microsoft Windows Server 2022 Base"), qui se crée de manière analogue à la précédente.
 
-Une fois l'instance créée, elle est publiquement accessible sur `ec2-35-180-139-227.eu-west-3.compute.amazonaws.com`.
+Une fois l'instance créée, elle est publiquement accessible sur `ec2-35-180-139-227.eu-west-3.compute.amazonaws.com` (attention à restreindre les accès RDP à mon IP).
 
 Pour s'y connecter, la marche à suivre est légèrement différente.
 
 Sur un serveur Windows, la clé SSH utilisée lors de la création de l'instance, est celle permettant de _déchiffrer_ le mot de passe du serveur Windows. Via l'option associée dans "Sécurité", on doit uploader le fichier de clé privée pour obtenir le mot de passe.
 
+Nom: Administrator
+ID instance: i-0f342957c33a8a42b
+IP privée: 172.31.43.172
+IP publique: 13.39.19.138
 
+Pour se connecter sur une machine Windows depuis un serveur Debian (mon PC perso), j'utilise FreeRDP, qui est un logiciel permettant d'avoir sur Linux un client RDP, ce dernier étant le protocole pour se connecter à distance sur une machine Windows (a priori l'inverse de Putty sur Windows pour aller sur Linux):
 
+```bash
+sudo apt install freerdp2-x11
+xfreerdp /v:13.39.19.138 /u:Administrator
+```
+
+Puis avec le mot de passe indiqué dans le fichier associé, ça passe !!!
+
+Le serveur n'est pas accessible dans une barre d'adresses, mais en même temps ce n'est pas du tout configuré pour être un serveur Web, donc à la limite je peux comprendre.
