@@ -20,7 +20,7 @@ Au fait, les gens sur Windows ont besoin de passer par PuTTY (ou MobaXTerm) pour
 
 On peut aussi louer une instance EC2 Windows sur AWS (AMI "Microsoft Windows Server 2022 Base"), qui se crée de manière analogue à la précédente.
 
-Une fois l'instance créée, elle est publiquement accessible sur `ec2-35-180-139-227.eu-west-3.compute.amazonaws.com` (attention à restreindre les accès RDP à mon IP).
+Une fois l'instance créée, elle est publiquement accessible sur `ec2-35-180-139-227.eu-west-3.compute.amazonaws.com` (attention à restreindre les accès RDP à mon IP, et à créer un groupe de sécurité pour cette utilisation, sinon pour une raison encore peut claire - sûrement un bug côté AWS ou un truc que je n'ai pas encore compris concernant la restriction d'IP à ce sujet pour le moment ? À voir un jour mais osef pour le moment, pour ne pas perdre trop de temps, le serveur m'est inaccessible).
 
 Pour s'y connecter, la marche à suivre est légèrement différente.
 
