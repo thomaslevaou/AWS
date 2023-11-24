@@ -23,9 +23,9 @@ L'IP élastique doit alors pointer sur notre nouvelle instance, bien entendu, ce
 
 En réalisant des sauvegardes EBS, on réalise des **sauvegardes incrémentielles** : le premier instantané sauvegarde tout le disque, mais les suivants ne sauvegardent que les différences de mémoire (par exemple, si seulement 1 Go a changé par rapport au premier instantané, alors le deuxième ne fera qu'1 Go).
 
-Pour réaliser une sauvegarde EBS, je vais dans Elastic Block Stores > Volumes, je coche le volume lié à l'instance que je veux sauvegarder, puis je clique sur "Créer un instantané". Je donne alors un nom à mon instantané, puis clique sur "Créer un instantané". Et c'est comme ça que je peux voir mon backup dans "Elastic Block Store > Instantanés". J'ai donc à ce moment-là créé un _instantané de mon volume_, que je peux donc restaurer sur une instance donnée.
+Pour réaliser une sauvegarde EBS, je vais dans Elastic Block Stores > Volumes, je coche le volume lié à l'instance que je veux sauvegarder, puis je clique sur "Créer un instantané". Je donne alors un nom à mon instantané, puis clique sur "Créer un instantané". Et c'est comme ça que je peux voir mon backup dans "Elastic Block Store > Instantanés". J'ai donc à ce moment-là créé un _instantané de mon volume_, que je peux donc restaurer sur une instance donnée. Le premier instantané prend pas mal de place, mais les suivants sauvegardant de manière incrémentielle, l'emplacement pris ne devrait pas être trop gros.
 
-Si je veux restaurer mon instance avec cette instantané, je coche l'instantané EBS, puis clique sur "Actions > Créer un volume à partir d'un instantané" (de volume donc).
+Si je veux restaurer mon instance avec cette instantané, je coche l'instantané EBS, puis clique sur "Actions > Créer un volume à partir d'un instantané" (de volume donc). De ce que je comprends, c'est à ce moment que je prends une dizaine de Go de disque dur à nouveau (genre là, je vais prendre un nouveau SSD genre).
 
 Attention, la "zone de disponibilité" (le datacenter) doit être la même que celle de l'instance que je veux restaurer (ici donc "eu-west-3c"). Une fois que c'est vérifié / modifié, je peux laisser le reste par défaut, et cliquer sur "Créer un volume".
 
@@ -38,3 +38,7 @@ En revenant sur la page de volumes, je peux _détacher le volume en cours d'util
 Je peux alors prendre mon volume créé tout à l'heure, puis sélectionner l'action "attacher le volume". C'est là que je dois renseigner l'instance à attacher au volume, ainsi que le point de montage précédemment noter.
 
 Je peux alors (re-)démarrer mon instance sur Debian. Si tout est revenu à la normale, on peut alors détacher l'ancien volume.
+
+Donc pour gérer nos back-ups, soit on fait des instantanés du volume, soit on fait des AMI de l'instance.
+
+J'ai l'impression que les instantanés de volumes sont la manière "propre" de faire. Genre en créant à chaque fois une AMI de l'instance, j'y vais un peu comme un bourrin, en demandant de tout recréer dans l'AMI qui consomme de la place. Alors qu'en faisant des instantanés du volume, je consomme un peu moins en me focalisant sur l'essentiel de mes données (qui sont sur le disque dur).
