@@ -7,7 +7,7 @@ Il existe deux manière de sauvegarder une instance EC2 :
 - Créer une image machine Amazon (AMI) de notre serveur, ce qui est super simple mais une AMI prend de la place et peut finir par devenir payant;
 - Créer un instantané EBS pour sauvegarder le disque.
 
-## Sauvegarde et restauration d'une AMI
+## Sauvegarde et restauration par créations d'AMI
 
 Sur la liste des instances, je coche celle que je veux sauvegarder, puis je clique sur Actions > Images et modèles > Créer une image. Je laisse les paramètres par défaut et clique sur "Créer une image". L'image est alors visibles dans la partie Images > ami du menu de gauche.
 
@@ -19,7 +19,7 @@ Pour "supprimer" l'AMI (si on en fait beaucoup, elles peuvent s'accumuler et dev
 
 L'IP élastique doit alors pointer sur notre nouvelle instance, bien entendu, ce qui est paramétrable dans la console AWS.
 
-## Sauvegarde et restauration d'un EBS
+## Sauvegarde et restauration par créations d'instantanés EBS
 
 En réalisant des sauvegardes EBS, on réalise des **sauvegardes incrémentielles** : le premier instantané sauvegarde tout le disque, mais les suivants ne sauvegardent que les différences de mémoire (par exemple, si seulement 1 Go a changé par rapport au premier instantané, alors le deuxième ne fera qu'1 Go).
 

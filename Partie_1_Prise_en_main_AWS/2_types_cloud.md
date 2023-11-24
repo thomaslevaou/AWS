@@ -1,5 +1,7 @@
 # Adoptez le bon type de cloud
 
+## Les types de Cloud
+
 3 types de cloud:
 
 - **IaaS** ("Infrastructure as a Service"): on loue la puissance du serveur (comme vu dans le chapitre précédent);
@@ -17,6 +19,8 @@ Mais attention, ça demande de coder parfois des trucs spécifiquement pour un c
 Amazon fournit aussi des SaaS, mais on n'en parlera pas plus dans ce cours.
 
 AWS a été le premier à se lancer dans le cloud. D'autres existent mais ils sont moins utilisés (Azure, Google Cloud).
+
+## Principaux services d'AWS
 
 Amazon offre des centaines de services, chacun pouvant prendre énormément de temps à être pris en main => personne ne sait complètement comment utiliser chacun de tous ces outils.
 

@@ -12,4 +12,4 @@ D'un point de vue légalité, c'est la loi du pays où se trouve le serveur qui 
 
 Attention il faut aller dans les paramètres de son compte pour être averti en cas d'approchement de la limite de l'offre gratuite d'AWS.
 
-On peut aussi créer un budget à ne pas dépasser pour être averti quand on dépasse l'offre gratuite d'AWS
+On peut aussi créer un budget à ne pas dépasser pour être averti quand on dépasse l'offre gratuite d'AWS.

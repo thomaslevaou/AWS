@@ -1,4 +1,6 @@
-# Créez votre premier serveur sur AWS
+# Créez votre premier serveur web sur AWS
+
+## Création d'un serveur Web via LightSail
 
 Sur la console AWS, dans l'onglet "Services > Calcul", on peut accéder à un service appelé **Lightsail**, qui va permettre de créer rapidement un serveur web.
 
@@ -16,7 +18,9 @@ On a aussi une icône de terminal (sur la page d'accueil listant les instances l
 
 On peut créer une copie de notre disque dur à tout moment, si besoin. On appelle ça un **instantané** (ou snapshot). Attention, la création d'un instantané est payante.
 
-Lightsail permet ainsi de créer un serveur web en quelques clics, mais n'es pas très customisable si on a besoin d'apporter des modifications précises dessus (ce qui peut vite arriver en entreprise).
+Lightsail permet ainsi de créer un serveur web en quelques clics, mais n'est pas très customisable si on a besoin d'apporter des modifications précises dessus (ce qui peut vite arriver en entreprise).
+
+## Création d'un serveur Web via Elastic Beanstalk
 
 Pour créer un serveur web un peu plus personnalisable, on va utiliser **Elastic Beanstalk**.
 

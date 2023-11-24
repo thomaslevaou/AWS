@@ -1,11 +1,27 @@
 # Démarrez votre première instance EC2
 
-Plusieurs types d'instances sont proposés par AWS. Pour lancer notre première instance EC2, on doit commencer par choisir son bon type.
+## Choix du Type d'instance, type de serveur, type de tarification
+
+Lorsqu'on veut créer une instance, AWS en propose plusieurs types. Pour lancer notre première instance EC2, on doit commencer par choisir son bon type.
 La liste des types d'instances EC2 disponibles est accessible dans `Instances > Types d'instances`.
 
-Ici dans le cadre de ce cours, nous allons utiliser l'instance **t2.micro**, qui est gratuite pendant un an, pour faire du web "de base" (ce qu'AWS appelle "éligible à l'offre gratuite"). Les autres types de serveur existent pour répondre à des besoins spécifiques qui ne nous concernent pas ici.
+Des types d'instances, il y en a plein. C'est pourquoi on les regroupe dans 5 grosses _catégories de types d'instance_ :
+
+- **usage général**: équilibrés entre le processeur, la mémoire vive et le disque dur, on les utilise pour le Web;
+- **calcul optimisé**: les "monstres de calcul", pour des grosses stats ou grosses perfs quoi;
+- **mémoire optimisée**: pour les cas où on a besoin de plusieurs To de mémoire vive (oui ça existe);
+- **calcul accéléré**: autres "monstres de calcul", cette fois dans le GPU pour faire du Machine Learning;
+- **stockage optimisé**: pour avoir un disque dur sur lequel il est particulièrement rapide d'accéder aux données (oui des fois, ce besoin existe aussi).
+
+Pour faire du web, on va utiliser un type d'instance t2, dans la catégorie d'openclassrooms "usage général" quoi.
+
+Et pour chaque type d'instance, on a un _type de serveur_ associé. Ici en gros on va utilisé le type de serveur micro.
+
+D'où le fait qu'ici dans le cadre de ce cours, nous allons utiliser l'instance **t2.micro**, qui est gratuite pendant un an, pour faire du web "de base" (ce qu'AWS appelle "éligible à l'offre gratuite"). Les autres types de serveur existent pour répondre à des besoins spécifiques qui ne nous concernent pas ici.
 
 En plus des types de serveurs, il existe aussi plusieurs types de _tarification_ de serveurs. Les types de tarification sont listés et détaillés [sur ce lien](https://aws.amazon.com/fr/ec2/pricing/). Nous on utilisera la tarification à la demande. Mais d'autres types de tarification existent, à choisir en fonction de l'engagement et du besoin qu'on aura du serveur en production, pour des utilisations plus professionnelles.
+
+## Paramétrages et lancement de l'instance
 
 Le lancement d'une instance s'effectue sur la page `Instances > Instances`, en cliquant sur le bouton "Lancer des instances".
 
