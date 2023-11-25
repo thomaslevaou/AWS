@@ -1,6 +1,6 @@
 # Démarrez votre première instance EC2
 
-## Choix du Type d'instance, type de serveur, type de tarification
+## Choix du Type d'instance et du type de serveur
 
 Lorsqu'on veut créer une instance, AWS en propose plusieurs types. Pour lancer notre première instance EC2, on doit commencer par choisir son bon type.
 La liste des types d'instances EC2 disponibles est accessible dans `Instances > Types d'instances`.
@@ -19,7 +19,15 @@ Et pour chaque type d'instance, on a un _type de serveur_ associé. Ici en gros 
 
 D'où le fait qu'ici dans le cadre de ce cours, nous allons utiliser l'instance **t2.micro**, qui est gratuite pendant un an, pour faire du web "de base" (ce qu'AWS appelle "éligible à l'offre gratuite"). Les autres types de serveur existent pour répondre à des besoins spécifiques qui ne nous concernent pas ici.
 
-En plus des types de serveurs, il existe aussi plusieurs types de _tarification_ de serveurs. Les types de tarification sont listés et détaillés [sur ce lien](https://aws.amazon.com/fr/ec2/pricing/). Nous on utilisera la tarification à la demande. Mais d'autres types de tarification existent, à choisir en fonction de l'engagement et du besoin qu'on aura du serveur en production, pour des utilisations plus professionnelles.
+## Choix du type de tarification
+
+En plus des types de serveurs, il existe aussi plusieurs types de _tarification_ de serveurs. Les types de tarification sont listés et détaillés [sur ce lien](https://aws.amazon.com/fr/ec2/pricing/). Nous on utilisera la tarification à la demande. Mais d'autres types de tarification existent, à choisir en fonction de l'engagement et du besoin qu'on aura du serveur en production, pour des utilisations plus professionnelles. Ils sont quand même à connaître, donc les voici :
+
+- **tarification à la demande**: celle prise dans le cadre de ce cours, où je suis tarifé en fonction du serveur que je prends et de sa durée de location. Comme je prends au maximum des serveurs "éligibles à l'offre gratuite", ça ne devrait pas me coûter très cher dans le but pédagogique du cours ici;
+- **instances spots**: je fais tourner des machines consommant les capacités non utilisées d'AWS. Ce qui peut faire baisser les prix jusqu'à 90% d'autres tarifs, mais AWS peut ici les réquisitionner de manière unilatérale à tout instant;
+- **instance réservées**: je m'engage pendant une durée déterminée à les utiliser (genre un an), et j'ai en échange des réducs pouvant aller jusqu'à 72% (par rapport à la tarification à la demande je suppose);
+- **savings plans**: je m'engage pendant une durée déterminée (genre un an) à souscrire à une offre qui coûte X centimes de l'heure, ce qui me permet d'avoir une réduction d'environ 30% sur ce prix (genre 10 centimes de l'heure au lieu de 15 centimes de l'heure, juste en échange de dire "je me suis engagé à utiliser cette offre pendant un an). Je pense que c'est histoire d'avoir une réduction en échange d'une forme d'engagement quand même (peut-être comme ça qu'Amazon encourage à utiliser un peu plus leurs services en mode "dans un an ce sera plus cher" ?);
+- **hôte dédiés** : je réserve la machine physique entière, si je suis vraiment contraint de ne pas pouvoir la partager (genre politique de la boîte, ou licence logicielle demandant obligatoirement un serveur physique).
 
 ## Paramétrages et lancement de l'instance
 
