@@ -19,11 +19,13 @@ Pour "supprimer" l'AMI (si on en fait beaucoup, elles peuvent s'accumuler et dev
 
 L'IP élastique doit alors pointer sur notre nouvelle instance, bien entendu, ce qui est paramétrable dans la console AWS.
 
-## Sauvegarde et restauration par créations d'instantanés EBS
+Faire une sauvegarde par création d'AMI est utile si j'ai besoin de créer 10 instances EC2 basées sur une même sauvegarde d'instance, par exemple. Sinon avec la deuixème méthode ci-dessous, il faudrait que je crée 10 volumes, puis 10 instances, et que je rattache les 10 volumes aux 10 instances, ce qui serait alors inutilement compliqué.
+
+## Sauvegarde et restauration par créations d'instantanés de volumes EBS
 
 En réalisant des sauvegardes EBS, on réalise des **sauvegardes incrémentielles** : le premier instantané sauvegarde tout le disque, mais les suivants ne sauvegardent que les différences de mémoire (par exemple, si seulement 1 Go a changé par rapport au premier instantané, alors le deuxième ne fera qu'1 Go).
 
-Pour réaliser une sauvegarde EBS, je vais dans Elastic Block Stores > Volumes, je coche le volume lié à l'instance que je veux sauvegarder, puis je clique sur "Créer un instantané". Je donne alors un nom à mon instantané, puis clique sur "Créer un instantané". Et c'est comme ça que je peux voir mon backup dans "Elastic Block Store > Instantanés". J'ai donc à ce moment-là créé un _instantané de mon volume_, que je peux donc restaurer sur une instance donnée. Le premier instantané prend pas mal de place, mais les suivants sauvegardant de manière incrémentielle, l'emplacement pris ne devrait pas être trop gros.
+Pour réaliser une sauvegarde EBS, je vais dans Elastic Block Stores > Volumes, je coche le volume lié à l'instance que je veux sauvegarder, puis je clique sur "Créer un instantané". Je donne alors un nom à mon instantané, puis clique sur "Créer un instantané". Et c'est comme ça que je peux voir mon backup dans "Elastic Block Store > Instantanés". J'ai donc à ce moment-là créé un _instantané de mon volume_, que je peux donc restaurer sur une instance donnée (en créant un volume à partir de cet instantané, puis en attachant ce volume à l'instance). Le premier instantané prend pas mal de place, mais les suivants sauvegardant de manière incrémentielle, l'emplacement pris ne devrait pas être trop gros.
 
 Si je veux restaurer mon instance avec cette instantané, je coche l'instantané EBS, puis clique sur "Actions > Créer un volume à partir d'un instantané" (de volume donc). De ce que je comprends, c'est à ce moment que je prends une dizaine de Go de disque dur à nouveau (genre là, je vais prendre un nouveau SSD genre).
 
@@ -35,10 +37,15 @@ Je peux maintenant arrêter le serveur (donc l'instance). Et noter alors le poin
 
 En revenant sur la page de volumes, je peux _détacher le volume en cours d'utilisation_ (c'est une action possible sur un volume). Le volume en cours d'utilisation devient alors "disponible".
 
-Je peux alors prendre mon volume créé tout à l'heure, puis sélectionner l'action "attacher le volume". C'est là que je dois renseigner l'instance à attacher au volume, ainsi que le point de montage précédemment noter.
+Je peux alors prendre mon volume créé tout à l'heure, puis sélectionner l'action "attacher le volume". C'est là que je dois renseigner l'instance à attacher au volume, ainsi que le point de montage précédemment noté.
 
 Je peux alors (re-)démarrer mon instance sur Debian. Si tout est revenu à la normale, on peut alors détacher l'ancien volume.
 
 Donc pour gérer nos back-ups, soit on fait des instantanés du volume, soit on fait des AMI de l'instance.
 
 J'ai l'impression que les instantanés de volumes sont la manière "propre" de faire. Genre en créant à chaque fois une AMI de l'instance, j'y vais un peu comme un bourrin, en demandant de tout recréer dans l'AMI qui consomme de la place. Alors qu'en faisant des instantanés du volume, je consomme un peu moins en me focalisant sur l'essentiel de mes données (qui sont sur le disque dur).
+
+La meilleure option à adopter dans la manière de gérer les sauvegardes dépend du besoin :
+
+- Si c'est pour gérer plus facilement des back-ups d'une instance, la méthode la plus économique et moins gourmande en ressources est de passer par des instantanés de volumes EBS.
+- Si c'est pour créer plusieurs instances sur une sauvegarde commune, la méthode la plus rapide entraînant le moins de complications est la création d'une AMI ppour l'instance.

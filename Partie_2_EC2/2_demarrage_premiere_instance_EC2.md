@@ -27,13 +27,13 @@ En plus des types de serveurs, il existe aussi plusieurs types de _tarification_
 - **instances spots**: je fais tourner des machines consommant les capacités non utilisées d'AWS. Ce qui peut faire baisser les prix jusqu'à 90% d'autres tarifs, mais AWS peut ici les réquisitionner de manière unilatérale à tout instant;
 - **instance réservées**: je m'engage pendant une durée déterminée à utiliser les machines (genre un an), et j'ai en échange des réducs pouvant aller jusqu'à 72% (par rapport à la tarification à la demande je suppose);
 - **savings plans**: je m'engage pendant une durée déterminée (genre un an) à souscrire à une offre qui coûte X centimes de l'heure, ce qui me permet d'avoir une réduction d'environ 30% sur ce prix (genre 10 centimes de l'heure au lieu de 15 centimes de l'heure, juste en échange de dire "je me suis engagé à utiliser cette offre pendant un an). Je pense que c'est histoire d'avoir une réduction en échange d'une forme d'engagement quand même (peut-être comme ça qu'Amazon encourage à utiliser un peu plus leurs services en mode "dans un an ce sera plus cher" ?);
-- **hôte dédiés** : je réserve la machine physique entière, si je suis vraiment contraint de ne pas pouvoir la partager (genre politique de la boîte, ou licence logicielle demandant obligatoirement un serveur physique).
+- **hôtes dédiés** : je réserve la machine physique entière, si je suis vraiment contraint de ne pas pouvoir la partager (genre politique de la boîte, ou licence logicielle demandant obligatoirement un serveur physique).
 
 ## Paramétrages et lancement de l'instance
 
 Le lancement d'une instance s'effectue sur la page `Instances > Instances`, en cliquant sur le bouton "Lancer des instances".
 
-Lors du lancement d'une instance, on doit choisir une **AMI** (Amazon Machine Image), qui est globalement une grosse configuration logicielle qu'on veut de notre serveur (OS, applications, etc). C'est obligatoire, bien qu'on puisse choisir une AMI quasiment vierge (genre juste un OS).
+Lors du lancement d'une instance, on doit choisir une **AMI** (Amazon Machine Image), qui est globalement une grosse configuration logicielle qu'on veut de notre serveur (OS, applications, etc). C'est obligatoire (on ne peut pas avoir une instance sans choisir une AMI), bien qu'on puisse choisir une AMI quasiment vierge (genre juste un OS).
 
 Ici, on suppose qu'on a besoin de monter un serveur web exécutant un site en PHP. Pour gagner du temps, on va installer une AMI préconfigurée.
 
