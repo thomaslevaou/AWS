@@ -8,6 +8,6 @@ On laisse le VPC par défaut (qui pourra être utile plus tard pour connecter un
 
 Sur une instance RDS, on peut aussi choisir un groupe de sécurité, et on va laisser ici celui par défaut. On évite de choisir l'accès public pour des raisons de sécurité (en entreprise, un serveur RDS doit n'être accessible que dans le VPC), mais comme ici on ne s'en sert que pour du test, on va l'autoriser pour simplifier des démarches après. On laisse ensuite tous les autres paramètres par défaut, puis on clique ensuite sur "Créer une base de données". On voit alors notre instance dans la liste de la page "Base de données".
 
-Dès que l'instance est en statut "disponible", on peut cliquer dessus, ce qui permet d'afficher (entre autres) le "point de terminaison", c'est-à-dire l'adresse qui va nous permettre ensuite d'accéder au serveur. Pour nous ici, c'est <database-1.csmrcdmwftnv.eu-west-3.rds.amazonaws.com>
+Dès que l'instance est en statut "disponible", on peut cliquer dessus, ce qui permet d'afficher (entre autres) le "point de terminaison", c'est-à-dire l'adresse qui va nous permettre ensuite d'accéder au serveur. Pour nous ici, c'est <database-1.csmrcdmwftnv.eu-west-3.rds.amazonaws.com>. On pourra l'entrer dans un client MySQL pour me connecter à l'instance, par exemple.
 
 Attention à ne pas confondre par la suite une instance RDS (qui reste un serveur malgré tout) et une base de données (qui est hébergée sur ce serveur).
