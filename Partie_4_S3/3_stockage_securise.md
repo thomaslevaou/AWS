@@ -1,0 +1,1 @@
+# Utilisez le stockage AWS de manière sécurisée
