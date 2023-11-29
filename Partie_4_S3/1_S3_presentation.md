@@ -18,7 +18,7 @@ Techniquement, on _pourrait_ créer un accès FTP sur une instance EC2, au lieu 
 
 De plus, à stockage équivalent, S3 coûte moins cher qu'un volume EBS.
 
-Avec S3, on place nos données dans ce qu'on appelle des _buckets_ ("seaux"), dans lesquels on peut mettre des fichiers et des sous-dossiers.
+Avec S3, on place nos données dans ce qu'on appelle des _buckets_ ("seaux" ou "compartiments"), dans lesquels on peut mettre des fichiers et des sous-dossiers.
 Et les fichiers sont ici appelés des _objets_.
 
 S3 peut prévoir la facturation en fonction de la fréquence de récupération de l'objet: moins un objet est récupéré souvent, moins sa gestion sera chère (c'est pratique pour ne pas avoir à payer le même prix pour un backup de bdd que pour des images à récupérer toutes les heures, par exemple).
