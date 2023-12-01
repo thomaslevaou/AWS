@@ -1,0 +1,1 @@
+# Définissez les droits d'accès à Amazon S3
