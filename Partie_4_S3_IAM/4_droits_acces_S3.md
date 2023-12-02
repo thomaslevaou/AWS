@@ -133,3 +133,5 @@ Si maintenant je souhaite ajouter une autre polique de bucket pour que notre uti
  ]
 }
 ```
+
+Et puis si besoin, des générateurs de policies en ligne existent pour aider à dépanner sur l'écriture de celles-ci.
