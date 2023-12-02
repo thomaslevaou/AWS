@@ -87,3 +87,49 @@ Notons que mettre `{ "AWS": "*" }` dans `"Principal"`, est équivalent à mettre
 }
 ```
 
+Pour appliquer une stratégie de bucket sur AWS, je vais dans `S3 > Compartiments`, je clique sur le compartiment sur lequel je veux appliquer une stratégie, puis je clique sur "Autorisations". Ici, je vais vouloir rendre les images de mon compartiment publiquement accessibles, d'où le fait que je vais faire en sorte de décocher la case "Bloquer tous les accès publics" (en passant par le bouton "Modifier" dans la section associée).
+
+Puis dans la partie "Stratégie de compartiment", je peux cliquer sur "Modifier". Dans le bloc "Stratégie" qui apparaît alors à l'écran, je peux renseigner le JSON suivant :
+
+```JSON
+{
+ "Version": "2012-10-17",
+ "Statement": [
+  {
+   "Sid": "LectureSeule",
+   "Principal": "*",
+   "Effect": "Allow",
+   "Action": [
+    "s3:GetObject"
+   ],
+   "Resource": ["arn:aws:s3:::premier-test-bucket-aws/*"]
+  }
+ ]
+}
+```
+
+Le menu à droite aide à retrouver les actions. Maintenant, l'URL de l'objet du bucket (pour rappel, <https://premier-test-bucket-aws.s3.eu-west-3.amazonaws.com/Capture+d%E2%80%99%C3%A9cran+de+2023-11-23+21-14-52.png>) est publiquement accessible pour tout le monde, même en navigation privée.
+
+Si maintenant je souhaite ajouter une autre polique de bucket pour que notre utilisateur bob puisse ajouter des fichiers (enfin il le peut déjà via sa politique IAM, mais c'est juste pour montrer ici comment le faire via une bucket policy), je modifie les autorisations du bucket en renseignant notamment son identifiant (arn) IAM, comme ci-dessous :
+
+```JSON
+{
+ "Version": "2012-10-17",
+ "Statement": [
+  {
+   "Sid": "LectureSeule",
+   "Effect": "Allow",
+   "Principal": "*",
+   "Action": "s3:GetObject",
+   "Resource": "arn:aws:s3:::premier-test-bucket-aws/*"
+  },
+  {
+   "Sid": "EcritureBob",
+   "Effect": "Allow",
+   "Principal": { "AWS" : "arn:aws:iam::527712552468:user/bob" },
+   "Action": "s3:PutObject",
+   "Resource": "arn:aws:s3:::premier-test-bucket-aws/*"
+  }
+ ]
+}
+```
