@@ -47,7 +47,7 @@ Mais ça n'a pas marché pou l'autre, donc à la place je suis allé dans ses au
 
 Je peux donc à présent me rendre sur [la page listant les compartiments](https://s3.console.aws.amazon.com/s3/buckets?region=eu-west-3), en constatant bien qu'au moment où j'écris ces lignes, je ne vois pas de compartiment dans la liste.
 
-Attention, un nom de bucket sur AWS ne doit être utilisé par personne d'autre sur AWS entier (id unique). Le mien va s'appeler `premier-test-bucket-aws`.
+Attention, un nom de bucket sur AWS ne doit être utilisé par personne d'autre **sur AWS entier** (id absolument unique). Le mien va s'appeler `premier-test-bucket-aws`.
 
 On peut laisser les autres paramètres par défaut (AWS s'occupe par défaut, comme indiqué dans le formulaire, de chiffrer les fichiers en toute transparence pour nous).
 
