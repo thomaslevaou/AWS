@@ -16,4 +16,4 @@ Exemples d'utilisation:
 - nettoyer des données avant de les insérer dans une DB RDS
 - du backend d'applis web, IoT ou mobiles qui se joignent à une API: les lambda permettent alors d'exécuter du code en intermédiaire.
 
-Après la formation sera en freestyle, et je demanderai quelles docs ont aidé celleux qui travaillent déjà dessus
+Après la formation sera en freestyle, et je demanderai quelles docs ont aidé celleux qui travaillent déjà dessus. Ça a l'air rapide à apprendre, et très spécifique à chaque environnement de travail / bidouilles sur des interfaces.
